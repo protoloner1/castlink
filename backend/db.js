@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 
 const DB_FILE = path.join(__dirname, 'db', 'data.json');
-
+fs.mkdirSync(path.dirname(DB_FILE), { recursive: true });
 const DEFAULT = {
   users: [],        // {id, name, email, passwordHash, role: 'actor'|'employer', createdAt}
   actors: [],       // {id, userId, stageName, headline, bio, location, gender, age, height,
